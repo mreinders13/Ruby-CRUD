@@ -1,0 +1,20 @@
+<h1>List of Students</h1>
+
+<table>
+	<tr>
+		<th>Last Name</th>
+		<th>First Name</th>
+		<th>GPA</th>
+		<th>Graduation Date</th>
+		<th></th>
+	</tr>
+	<% @students.each do |student| %>
+		<tr>
+			<td><%= student.last %></td>
+			<td><%= student.first %></td>
+			<td><%= student.gpa %></td>
+			<td><%= student.date %></td>
+			<td><%= link_to 'Show', student_path(student) %></td>
+		</tr>
+	<% end %>
+</table>
