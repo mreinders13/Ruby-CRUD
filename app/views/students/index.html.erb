@@ -1,24 +1,28 @@
+<div class="content">
 <h1>List of Students</h1>
 
 <table>
 	<tr>
-		<th>Last Name</th>
-		<th>First Name</th>
-		<th>GPA</th>
-		<th>Graduation Date</th>
-		<th></th>
+		<th class="col">Last Name</th>
+		<th class="col">First Name</th>
+		<th class="col">GPA</th>
+		<th class="col">Graduation Date</th>
+		<th class="col"></th>
+		<th class="col"></th>
+		<th class="col"></th>
 	</tr>
 	<% @students.each do |student| %>
 		<tr>
-			<td><%= student.last %></td>
-			<td><%= student.first %></td>
-			<td><%= student.gpa %></td>
-			<td><%= student.date %></td>
-			<td><%= link_to 'Show', student_path(student) %></td>
-			<td><%= link_to 'Edit', edit_student_path(student) %></td>
-			<td><%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			<td class="cell"><%= student.last %></td>
+			<td class="cell"><%= student.first %></td>
+			<td class="cell"><%= student.gpa %></td>
+			<td class="cell"><%= student.date %></td>
+			<td class="cell"><%= link_to 'Show', student_path(student) %></td>
+			<td class="cell"><%= link_to 'Edit', edit_student_path(student) %></td>
+			<td class="cell"><%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
 	<% end %>
 </table>
 <br>
 <%= link_to 'Add new student', new_student_path %>
+</div>
